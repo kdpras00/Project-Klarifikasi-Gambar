@@ -1,0 +1,8 @@
+tensorflow
+tensorflowjs
+kagglehub
+numpy
+matplotlib
+pandas
+scikit-learn
+pillow
