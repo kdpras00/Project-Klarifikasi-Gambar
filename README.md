@@ -7,8 +7,8 @@ Proyek akhir **Klasifikasi Gambar** (Dicoding) — model *Convolutional Neural N
 | Aspek | Keterangan |
 |---|---|
 | Dataset | [Fruits-360](https://www.kaggle.com/datasets/moltean/fruits) (Kaggle, oleh Mihai Oltean) |
-| Jumlah gambar | ±100.000 gambar (≥ 90.000, memenuhi kriteria ≥ 1.000) |
-| Jumlah kelas | 100+ kelas buah & sayuran (memenuhi kriteria ≥ 3 kelas) |
+| Jumlah gambar | ±10.000 gambar (subset 20 kelas dari ±100.000, memenuhi kriteria ≥ 1.000 & saran ≥ 10.000) |
+| Jumlah kelas | 20 kelas buah & sayuran (memenuhi kriteria ≥ 3 kelas) |
 | Resolusi | Beragam (gambar asli, tanpa preprocessing) |
 | Split | Training (50%) / Validation (25%) / Test (25%) |
 | Arsitektur | CNN `Sequential`: Conv2D, BatchNormalization, MaxPooling2D, Dropout, Dense |
@@ -46,6 +46,7 @@ submission
 
 ## Fitur yang Diimplementasikan
 
+- Optimasi kecepatan: subset dataset (20 kelas), `.cache()` + `.prefetch()`, `mixed_float16` (fp16), `BATCH_SIZE` lebih besar, `IMG_SIZE` sesuai resolusi asli
 - Callback: `EarlyStopping`, `ReduceLROnPlateau`, `ModelCheckpoint`
 - Data augmentation (hanya pada data training)
 - Plot akurasi & loss
